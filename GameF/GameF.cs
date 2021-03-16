@@ -10,6 +10,7 @@ namespace GameF
     {
         int size;
         public int moves { get; private set; }
+
         public Game(int size)
         {
             this.size = size;
