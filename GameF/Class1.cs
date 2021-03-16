@@ -8,5 +8,6 @@ namespace GameF
 {
     class Class1
     {
+        //работай пожалуйста 
     }
 }
