@@ -9,15 +9,36 @@ namespace GameF
     public class Game
     {
         int size;
+        Map map;
+        Coord space;
         public int moves { get; private set; }
 
         public Game(int size)
         {
             this.size = size;
+            map = new Map(size);
         }
-        public void Start(int random = 0)
+        public void Start(int seed = 0)
         {
-
+            int digit = 0;
+            foreach (Coord xy in new Coord().YieldCoord(size))
+            {
+                map.Set(xy, ++digit);
+            }
+            space = new Coord(size);
+            if (seed > 0)
+            {
+                Shuffle(seed);
+            }
+            moves = 0;
+        }
+        void Shuffle (int seed)
+        {
+            Random random = new Random(seed);
+            for (int j = 0; j < 0; j++)
+            {
+                PressAt(random.Next(size), random.Next(size));
+            }
         }
         public int PressAt(int x, int y)
         {
@@ -25,7 +46,38 @@ namespace GameF
         }
         int iPressAt(Coord xy)
         {
-            return 0;
+            if (space.Equals(xy))
+            {
+                return 0;
+            }
+
+            if (xy.x !=space.x && xy.y != space.y) //если нажатие по диагонали 
+            {
+                return 0;
+            }
+
+            int iSteps = Math.Abs(xy.x - space.x) + Math.Abs(xy.y - space.y);
+
+            //смещение координты +-1
+            while (xy.x != space.x)
+            {
+                Shift(Math.Sign(xy.x - space.x), 0);
+            }
+            while (xy.y != space.y)
+            {
+                Shift(0, Math.Sign(xy.y - space.y));
+            }
+
+            moves += iSteps;
+
+            return iSteps;
+        }
+
+        void Shift(int sx, int sy)
+        {
+            Coord next = space.Add(sx, sy); //сохранили коорд куда сдвигаемся 
+            map.Copy(next, space);
+            space = next;
         }
         public int GetDigitAt(int x, int y)
         {
@@ -33,11 +85,31 @@ namespace GameF
         }
         int iGetDigitAt(Coord xy)
         {
-            return 0;//пустое место
+            if (space.Equals(xy))
+            {
+                return 0;
+            }
+            return map.Get(xy);//пустое место
         }
-        public bool Solved ()
+        public bool Solved()
         {
-            return false;
+            if (!space.Equals(new Coord(size)))
+            {
+                return false;
+            }
+
+            int digit = 0;
+
+            foreach (Coord xy in new Coord().YieldCoord(size))
+            {
+                //проверка 16 клетки
+                if (map.Get(xy) != ++digit)
+                {
+                    return space.Equals(xy);
+                }
+             }
+            return true;
+
         }
     }
 }

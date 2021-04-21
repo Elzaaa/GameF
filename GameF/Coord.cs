@@ -16,6 +16,13 @@ namespace GameF
             this.x = x;
             this.y = y;
         }
+        
+        //последнее значение в списке 
+        public Coord (int size)
+        {
+            x = size - 1;
+            y = size - 1;
+        }
         public bool OnBoard (int size)
         {
             if (x < 0 || x > size - 1)
@@ -27,6 +34,21 @@ namespace GameF
                 return false;
             }
             return true;
+        }
+        public IEnumerable<Coord> YieldCoord(int size)
+        {
+            for (y = 0; y < size; y++)
+            {
+                for (x = 0; x < size; x++)
+                {
+                    yield return this;
+                }
+            }
+        }
+
+        public Coord Add(int sx, int sy)
+        {
+            return new Coord(x + sx, y + sy);
         }
     }
 }

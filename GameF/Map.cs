@@ -30,5 +30,10 @@ namespace GameF
             }
             return 0;
         }
+
+        public void Copy(Coord from, Coord to)
+        {
+            Set(to, Get(from));
+        }
     }
 }
