@@ -3,7 +3,6 @@
 
 namespace GameF.Tests
 {
-    //блок тестирования 
     [TestClass()]
     public class GameTests
     {

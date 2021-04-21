@@ -21,9 +21,17 @@ namespace GameF
         }
         public int PressAt(int x, int y)
         {
+            return iPressAt(new Coord(x, y));
+        }
+        int iPressAt(Coord xy)
+        {
             return 0;
         }
         public int GetDigitAt(int x, int y)
+        {
+            return iGetDigitAt(new Coord(x, y));
+        }
+        int iGetDigitAt(Coord xy)
         {
             return 0;//пустое место
         }
