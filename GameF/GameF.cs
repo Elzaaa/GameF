@@ -107,9 +107,9 @@ namespace GameF
                 {
                     return space.Equals(xy);
                 }
-             }
-            return true;
+            }
 
+            return true;
         }
     }
 }
