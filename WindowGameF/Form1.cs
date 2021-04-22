@@ -7,34 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameF;
 
 namespace WindowGameF
 {
     public partial class FormGameF : Form
     {
+        const int size = 4; 
+        Game game;
         public FormGameF()
         {
             InitializeComponent();
+            game = new Game(size);
+            //HideButtons();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
-
+            game.Start(10);
+            //ShowButtons();
         }
-
-        private void btn00_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
