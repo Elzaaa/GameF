@@ -19,14 +19,39 @@ namespace WindowGameF
         {
             InitializeComponent();
             game = new Game(size);
-            //HideButtons();
+            HideButtons();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             game.Start(10);
-            //ShowButtons();
+            ShowButtons();
         }
-       
+        void HideButtons()
+        {
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    ShowDigitAt(0, x, y);
+                }
+            }
+        }
+        void ShowButtons()
+        {
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    ShowDigitAt(game.GetDigitAt(x, y), x, y);
+                }
+            }
+        }
+        void ShowDigitAt(int digit, int x, int y)
+        {
+            Button button = (Button)Controls["btn" + x + y]; //выбор кнопки
+            button.Text = digit.ToString();
+            button.Visible = digit > 0;
+        }
     }
 }
