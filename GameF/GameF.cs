@@ -13,19 +13,26 @@ namespace GameF
         Coord space;
         public int moves { get; private set; }
 
+        public void Start()
+        {
+            throw new NotImplementedException();
+        }
+
         public Game(int size)
         {
             this.size = size;
             map = new Map(size);
         }
-        public void Start(int seed = 0)
+        public void Start(int seed)
         {
             int digit = 0;
             foreach (Coord xy in new Coord().YieldCoord(size))
             {
                 map.Set(xy, ++digit);
             }
+
             space = new Coord(size);
+
             if (seed > 0)
             {
                 Shuffle(seed);
@@ -35,7 +42,7 @@ namespace GameF
         void Shuffle (int seed)
         {
             Random random = new Random(seed);
-            for (int j = 0; j < 0; j++)
+            for (int j = 0; j < seed; j++)
             {
                 PressAt(random.Next(size), random.Next(size));
             }

@@ -63,6 +63,7 @@ namespace WindowGameF
             this.btn00.TabStop = false;
             this.btn00.Text = "F";
             this.btn00.UseVisualStyleBackColor = true;
+            this.btn00.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn10
             // 

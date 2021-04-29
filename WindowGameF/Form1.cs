@@ -53,5 +53,10 @@ namespace WindowGameF
             button.Text = digit.ToString();
             button.Visible = digit > 0;
         }
+
+        private void btn00_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
