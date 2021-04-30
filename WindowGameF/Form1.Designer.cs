@@ -276,7 +276,7 @@ namespace WindowGameF
             this.labStep.Name = "labStep";
             this.labStep.Size = new System.Drawing.Size(302, 34);
             this.labStep.TabIndex = 18;
-            this.labStep.Text = "Number of steps: 0";
+            this.labStep.Text = "Number of steps: ";
             this.labStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labStep.Click += new System.EventHandler(this.btn00_Click);
             // 

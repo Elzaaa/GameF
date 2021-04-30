@@ -24,11 +24,16 @@ namespace WindowGameF
 
         private void btn00_Click(object sender, EventArgs e)
         {
+            if (game.Solved()) return; //если игра решена кнопки не нажимаются 
             Button button = (Button)sender; //btn00
             int x = int.Parse(button.Name.Substring(3, 1));
             int y = int.Parse(button.Name.Substring(4, 1));
             game.PressAt(x, y);
             ShowButtons();
+            if (game.Solved())
+            {
+                labStep.Text = "Game finished in " + game.moves + " moves";
+            }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -56,6 +61,7 @@ namespace WindowGameF
                     ShowDigitAt(game.GetDigitAt(x, y), x, y);
                 }
             }
+            labStep.Text = "Number of steps: " + game.moves;
         }
 
         void ShowDigitAt(int digit, int x, int y)
