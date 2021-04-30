@@ -75,6 +75,7 @@ namespace WindowGameF
             this.btn10.TabStop = false;
             this.btn10.Text = "F";
             this.btn10.UseVisualStyleBackColor = true;
+            this.btn10.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn20
             // 
@@ -86,6 +87,7 @@ namespace WindowGameF
             this.btn20.TabStop = false;
             this.btn20.Text = "F";
             this.btn20.UseVisualStyleBackColor = true;
+            this.btn20.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn30
             // 
@@ -97,6 +99,7 @@ namespace WindowGameF
             this.btn30.TabStop = false;
             this.btn30.Text = "F";
             this.btn30.UseVisualStyleBackColor = true;
+            this.btn30.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn01
             // 
@@ -108,6 +111,7 @@ namespace WindowGameF
             this.btn01.TabStop = false;
             this.btn01.Text = "F";
             this.btn01.UseVisualStyleBackColor = true;
+            this.btn01.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn11
             // 
@@ -119,6 +123,7 @@ namespace WindowGameF
             this.btn11.TabStop = false;
             this.btn11.Text = "F";
             this.btn11.UseVisualStyleBackColor = true;
+            this.btn11.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn21
             // 
@@ -130,6 +135,7 @@ namespace WindowGameF
             this.btn21.TabStop = false;
             this.btn21.Text = "F";
             this.btn21.UseVisualStyleBackColor = true;
+            this.btn21.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn31
             // 
@@ -141,6 +147,7 @@ namespace WindowGameF
             this.btn31.TabStop = false;
             this.btn31.Text = "F";
             this.btn31.UseVisualStyleBackColor = true;
+            this.btn31.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn02
             // 
@@ -152,6 +159,7 @@ namespace WindowGameF
             this.btn02.TabStop = false;
             this.btn02.Text = "F";
             this.btn02.UseVisualStyleBackColor = true;
+            this.btn02.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn12
             // 
@@ -163,6 +171,7 @@ namespace WindowGameF
             this.btn12.TabStop = false;
             this.btn12.Text = "F";
             this.btn12.UseVisualStyleBackColor = true;
+            this.btn12.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn22
             // 
@@ -174,6 +183,7 @@ namespace WindowGameF
             this.btn22.TabStop = false;
             this.btn22.Text = "F";
             this.btn22.UseVisualStyleBackColor = true;
+            this.btn22.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn32
             // 
@@ -185,6 +195,7 @@ namespace WindowGameF
             this.btn32.TabStop = false;
             this.btn32.Text = "F";
             this.btn32.UseVisualStyleBackColor = true;
+            this.btn32.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn23
             // 
@@ -196,6 +207,7 @@ namespace WindowGameF
             this.btn23.TabStop = false;
             this.btn23.Text = "F";
             this.btn23.UseVisualStyleBackColor = true;
+            this.btn23.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn13
             // 
@@ -207,6 +219,7 @@ namespace WindowGameF
             this.btn13.TabStop = false;
             this.btn13.Text = "F";
             this.btn13.UseVisualStyleBackColor = true;
+            this.btn13.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn03
             // 
@@ -218,6 +231,7 @@ namespace WindowGameF
             this.btn03.TabStop = false;
             this.btn03.Text = "F";
             this.btn03.UseVisualStyleBackColor = true;
+            this.btn03.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btn33
             // 
@@ -229,6 +243,7 @@ namespace WindowGameF
             this.btn33.TabStop = false;
             this.btn33.Text = "F";
             this.btn33.UseVisualStyleBackColor = true;
+            this.btn33.Click += new System.EventHandler(this.btn00_Click);
             // 
             // btnEnd
             // 
@@ -248,6 +263,7 @@ namespace WindowGameF
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(148, 43);
             this.btnStart.TabIndex = 17;
+            this.btnStart.TabStop = false;
             this.btnStart.Text = "Start!";
             this.btnStart.UseCompatibleTextRendering = true;
             this.btnStart.UseVisualStyleBackColor = true;
@@ -262,6 +278,7 @@ namespace WindowGameF
             this.labStep.TabIndex = 18;
             this.labStep.Text = "Number of steps: 0";
             this.labStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labStep.Click += new System.EventHandler(this.btn00_Click);
             // 
             // labTimer
             // 
@@ -303,6 +320,7 @@ namespace WindowGameF
             this.Name = "FormGameF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameF";
+            this.Load += new System.EventHandler(this.FormGameF_Load);
             this.ResumeLayout(false);
 
         }

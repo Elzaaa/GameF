@@ -22,6 +22,15 @@ namespace WindowGameF
             HideButtons();
         }
 
+        private void btn00_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender; //btn00
+            int x = int.Parse(button.Name.Substring(3, 1));
+            int y = int.Parse(button.Name.Substring(4, 1));
+            game.PressAt(x, y);
+            ShowButtons();
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             game.Start(10);
@@ -37,6 +46,7 @@ namespace WindowGameF
                 }
             }
         }
+
         void ShowButtons()
         {
             for (int x = 0; x < size; x++)
@@ -47,6 +57,7 @@ namespace WindowGameF
                 }
             }
         }
+
         void ShowDigitAt(int digit, int x, int y)
         {
             Button button = (Button)Controls["btn" + x + y]; //выбор кнопки
@@ -54,7 +65,7 @@ namespace WindowGameF
             button.Visible = digit > 0;
         }
 
-        private void btn00_Click(object sender, EventArgs e)
+        private void FormGameF_Load(object sender, EventArgs e)
         {
 
         }

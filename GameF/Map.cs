@@ -8,7 +8,7 @@ namespace GameF
 {
     struct Map
     {
-        private int size;
+        int size;
         int[,] map;
         public Map (int size)
         {

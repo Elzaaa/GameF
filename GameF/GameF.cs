@@ -23,7 +23,7 @@ namespace GameF
             this.size = size;
             map = new Map(size);
         }
-        public void Start(int seed)
+        public void Start(int seed = 0)
         {
             int digit = 0;
             foreach (Coord xy in new Coord().YieldCoord(size))
