@@ -255,6 +255,7 @@ namespace WindowGameF
             this.btnEnd.Text = "End game ";
             this.btnEnd.UseCompatibleTextRendering = true;
             this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // btnStart
             // 
@@ -320,7 +321,6 @@ namespace WindowGameF
             this.Name = "FormGameF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameF";
-            this.Load += new System.EventHandler(this.FormGameF_Load);
             this.ResumeLayout(false);
 
         }

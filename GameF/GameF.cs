@@ -23,7 +23,7 @@ namespace GameF
             this.size = size;
             map = new Map(size);
         }
-        public void Start(int seed = 0)
+        public void Start(int seed)
         {
             int digit = 0;
             foreach (Coord xy in new Coord().YieldCoord(size))
@@ -111,6 +111,20 @@ namespace GameF
             {
                 //проверка 16 клетки
                 if (map.Get(xy) != ++digit)
+                {
+                    return space.Equals(xy);
+                }
+            }
+
+            return true;
+        }
+        public bool EndGame()
+        {
+            int digit = 0;
+            foreach (Coord xy in new Coord().YieldCoord(size))
+            {
+                //проверка 16 клетки
+                if (!(map.Get(xy) != ++digit))
                 {
                     return space.Equals(xy);
                 }

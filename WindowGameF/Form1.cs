@@ -71,9 +71,10 @@ namespace WindowGameF
             button.Visible = digit > 0;
         }
 
-        private void FormGameF_Load(object sender, EventArgs e)
+        private void btnEnd_Click(object sender, EventArgs e)
         {
-
+            labStep.Text = "Game was end";
+            HideButtons();
         }
     }
 }
