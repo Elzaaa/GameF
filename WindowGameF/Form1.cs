@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameF;
+
 namespace WindowGameF
 {
     public partial class FormGameF : Form
@@ -91,23 +92,20 @@ namespace WindowGameF
             labStep.Text = "Game was end";
             HideButtons();
         }
-
+       
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labTimer.Text = _countDownMin + ":" + _countDownSec;
-            for (; _countDownMin > 0; _countDownMin--)
+            
+            if(!(_countDownMin == 0 && _countDownSec == 0))
             {
-                labTimer.Text = _countDownMin + ":" + _countDownSec;
-                for (; _countDownSec > 0; _countDownSec--)
-                {
-                    labTimer.Text = _countDownMin + ":" + _countDownSec;
-                    if (_countDownSec < 1)
-                    {
-                        labTimer.Text = _countDownMin.ToString() + ":" + _countDownSec.ToString();
-                        _countDownSec = 60;
-                    }
-                }
+                _countDownSec--;
             }
+            if (_countDownSec < 1 && _countDownMin > 0)
+            {
+                _countDownMin--;
+                _countDownSec = 59;
+            }
+            labTimer.Text = _countDownMin.ToString() + " : " + _countDownSec.ToString();
         }
     }
 }
