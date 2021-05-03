@@ -281,6 +281,10 @@ namespace WindowGameF
             this.labStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labStep.Click += new System.EventHandler(this.btn00_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // labTimer
             // 
             this.labTimer.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

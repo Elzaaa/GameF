@@ -22,6 +22,7 @@ namespace GameF
         {
             this.size = size;
             map = new Map(size);
+
         }
         public void Start(int seed)
         {
