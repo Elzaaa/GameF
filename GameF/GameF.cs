@@ -13,11 +13,6 @@ namespace GameF
         Coord space;
         public int moves { get; private set; }
 
-        public void Start()
-        {
-            throw new NotImplementedException();
-        }
-
         public Game(int size)
         {
             this.size = size;
@@ -40,7 +35,7 @@ namespace GameF
             }
             moves = 0;
         }
-        void Shuffle (int seed)
+        public void Shuffle (int seed)
         {
             Random random = new Random(seed);
             for (int j = 0; j < seed; j++)
