@@ -255,6 +255,7 @@ namespace WindowGameF
             this.btnEnd.Text = "End game ";
             this.btnEnd.UseCompatibleTextRendering = true;
             this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // btnStart
             // 
@@ -279,6 +280,10 @@ namespace WindowGameF
             this.labStep.Text = "Number of steps: ";
             this.labStep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labStep.Click += new System.EventHandler(this.btn00_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // labTimer
             // 
@@ -320,7 +325,6 @@ namespace WindowGameF
             this.Name = "FormGameF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameF";
-            this.Load += new System.EventHandler(this.FormGameF_Load);
             this.ResumeLayout(false);
 
         }
